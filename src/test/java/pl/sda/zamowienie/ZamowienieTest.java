@@ -44,11 +44,14 @@ public class ZamowienieTest {
 
     @Test
     public void testDodawaniaZamowienia(){
+
         //given
         Zamowienie zamowienie2 = new Zamowienie();
+
         //when
         Pozycja pozycja2 = new Pozycja("woda", 5, 2);
         zamowienie2.dodajPozycje(pozycja2);
+
         //then
         assertEquals(1, zamowienie2.getPozycje().size());
     }
@@ -65,6 +68,7 @@ public class ZamowienieTest {
 
     @Test
     public void testSumyZamowienia(){
+
         //given
         Zamowienie zamowienieSuma = new Zamowienie();
         Pozycja pozycja = new Pozycja("mleko", 2, 2.50);
@@ -74,7 +78,9 @@ public class ZamowienieTest {
         zamowienieSuma.dodajPozycje(pozycja2);
         zamowienieSuma.dodajPozycje(pozycja3);
         //when
+
         double sumaZamowienia = zamowienieSuma.obliczWartosc();
+
         //then
         assertEquals(Double.valueOf(pozycja.obliczWartosc() + pozycja2.obliczWartosc() + pozycja3.obliczWartosc())
                 , Double.valueOf(sumaZamowienia));
